@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="input-section">
+    <mat-form-field appearance="fill">
+      <mat-label>Mensagem</mat-label>
+      <input
+        matInput
+        [(ngModel)]="conteudoMensagem"
+        placeholder="Digite a notificação"
+      />
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="enviarNotificacao()">
+      Enviar Notificação
+    </button>
+  </div>
+  <div class="list">
+    <mat-list>
+      @for (n of notificacoes; track $index) {
+      <mat-list-item>
+        <span>{{ n.msgId }}</span> -
+        <span class="status" style="margin-left: auto">{{ n.status }}</span>
+      </mat-list-item>
+      }
+    </mat-list>
+  </div>
+</div>
