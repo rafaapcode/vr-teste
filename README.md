@@ -2,6 +2,12 @@
 
 ## Objetivo criar um sistema simples de notificação usando RABBITMQ , NESTJS e ANGULAR.
 
+## Estrutura do projeto
+
+- O projeto foi dividido em 3 partes, sendo um o front-end e 2 para o backend.
+- Um serviço do backend é responsável por receber a mensagem e inserir ela no RABBITMQ.
+- Já o outro serviço do backend é responsável por consumir as mensagens da FILA e processar elas, além de ser responsável por realizar a comunicação WEBSOCKET com o front-End, atualizando dos STATUS das notificações.
+
 ## Passo a Passo para rodar o projeto.
 - 1 Primeiro execute o RABBITMQ, para isso voce pode usar o comando do docker:
   - ` docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:4-management``
